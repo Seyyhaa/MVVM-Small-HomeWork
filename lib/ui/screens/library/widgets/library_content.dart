@@ -30,7 +30,7 @@ class LibraryContent extends StatelessWidget {
                 song: vm.songs[index],
                 isPlaying: vm.isPlaying(vm.songs[index]),
                 onTap: () {
-                  vm.play(vm.songs[index]);
+                  vm.toggle(vm.songs[index]);
                 },
               ),
             ),

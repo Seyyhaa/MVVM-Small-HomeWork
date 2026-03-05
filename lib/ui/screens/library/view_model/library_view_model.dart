@@ -34,4 +34,12 @@ class LibraryViewModel extends ChangeNotifier {
   bool isPlaying(Song song) {
     return playerState.currentSong == song;
   }
+
+   void toggle(Song song) {
+    if (isPlaying(song)) {
+      stop();
+    } else {
+      play(song);
+    }
+  }
 }
