@@ -14,8 +14,12 @@ class LibraryViewModel extends ChangeNotifier {
     playerState.addListener(notifyListeners);
   }
 
-  Future<void> init() async {
-    _songs = await repository.fetchSongs();
+  // Future<void> init() async {
+  //   _songs = await repository.fetchSongs();
+  //   notifyListeners();
+  // }`
+  void init() {
+    _songs = repository.fetchSongs();
     notifyListeners();
   }
 
@@ -35,7 +39,7 @@ class LibraryViewModel extends ChangeNotifier {
     return playerState.currentSong == song;
   }
 
-   void toggle(Song song) {
+  void toggle(Song song) {
     if (isPlaying(song)) {
       stop();
     } else {

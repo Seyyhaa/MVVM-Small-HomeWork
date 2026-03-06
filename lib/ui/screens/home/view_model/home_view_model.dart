@@ -25,8 +25,8 @@ class HomeViewModel extends ChangeNotifier {
     final recentId = userHistoryRepository.fetchRecentSongId();
 
     recentSong = recentId
-        .map((id) => songRepository.fetchSongById(id))
-        .whereType<Song>()
+        .map((id) => songRepository.fetchSongById(id)) //[Song,null,Song,Song]
+        .whereType<Song>() //[Song,Song,Song]
         .toList();
 
     recommendedSong = songRepository.fetchSongs();

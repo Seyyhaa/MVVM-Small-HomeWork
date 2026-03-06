@@ -10,4 +10,11 @@ class Song {
     required this.artist,
     required this.duration,
   });
+  //overide ==
+  // @override
+  // bool operator ==(Object other) {
+  //   // TODO: implement ==
+  //   return super == other;
+  // }
+
 }
