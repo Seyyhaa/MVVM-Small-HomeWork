@@ -11,7 +11,7 @@ class LibraryContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final vm = context.watch<LibraryViewModel>();
-    final settingsState = context.watch<AppSettingsState>();
+    final settingsState = context.read<AppSettingsState>();
 
     return Container(
       color: settingsState.theme.backgroundColor,
